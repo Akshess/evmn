@@ -1,0 +1,28 @@
+
+
+
+nav {
+  background-color: crimson;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li{
+  margin: 0 10px;
+}
+
+a{
+  color: aliceblue;
+  text-decoration: solid;
+}
+
