@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration</title>
+    <link rel= "stylesheet" type= "text/css" href= "/static/styles/register.css">
+
+</head>
+<body>
+    <h1 style = text-align:center>Event Registration</h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Event Name :
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Event Name" Event_name ="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event Type :
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Event Type" Event_type ="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event Date :
+                </td>
+                <td>
+                    <input type = "date" placeholder = "Event Date" Event_date ="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Planner :
+                </td>
+                <td>
+                    <select name="Planner">
+                            <option>-Select-</option>
+                            <option>First product</option>
+                            <option>Second product</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event Time :
+                </td>
+                <td>
+                    <input type = "time" placeholder = "Event Time" Event_time ="">
+                </td>
+            </tr>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Venue:
+                </td>
+                <td>
+                    <select name="Venue">
+                        <option value="" >-Select-</option>
+                        <option>Tma Pai Hall</option>
+                        <option>Netravathi Hall</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Total Cost :
+                </td>
+                <td>
+                    {{Cost}}
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
