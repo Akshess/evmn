@@ -1,4 +1,4 @@
-# evmn
+# Event Management System
 
 This is our DBMS project of the year 2022-23 
 Intially we Created ER diagram based on our assumptions and attributes
