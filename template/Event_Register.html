@@ -8,75 +8,35 @@
 </head>
 <body>
     <h1 style = text-align:center>Event Registration</h1>
-    <form>
-        <table>
-            <tr>
-                <td>
-                    Event Name :
-                </td>
-                <td>
-                    <input type = "text" placeholder = "Event Name" Event_name ="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Event Type :
-                </td>
-                <td>
-                    <input type = "text" placeholder = "Event Type" Event_type ="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Event Date :
-                </td>
-                <td>
-                    <input type = "date" placeholder = "Event Date" Event_date ="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Planner :
-                </td>
-                <td>
-                    <select name="Planner">
-                            <option>-Select-</option>
-                            <option>First product</option>
-                            <option>Second product</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Event Time :
-                </td>
-                <td>
-                    <input type = "time" placeholder = "Event Time" Event_time ="">
-                </td>
-            </tr>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Venue:
-                </td>
-                <td>
-                    <select name="Venue">
-                        <option value="" >-Select-</option>
-                        <option>Tma Pai Hall</option>
-                        <option>Netravathi Hall</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Total Cost :
-                </td>
-                <td>
-                    {{Cost}}
-                </td>
-            </tr>
-        </table>
-    </form>
+<form>
+  <label for="event-name">Event Name:</label>
+  <input type="text" id="event-name" name="event-name"><br>
+
+  <label for="event-type">Event Type:</label>
+  <select id="event-type" name="event-type">
+    <option value="wedding">Wedding</option>
+    <option value="conference">Conference</option>
+    <option value="concert">Concert</option>
+    <option value="party">Party</option>
+  </select><br>
+
+  <label for="event-date">Event Date:</label>
+  <input type="date" id="event-date" name="event-date"><br>
+
+  <label for="event-time">Event Time:</label>
+  <input type="time" id="event-time" name="event-time"><br>
+
+  <label for="venue">Venue:</label>
+  <input type="text" id="venue" name="venue"><br>
+
+  <label for="planner">Planner:</label>
+  <input type="text" id="planner" name="planner"><br>
+
+  <label for="total-cost">Total Cost:</label>
+  <input type="number" id="total-cost" name="total-cost" min="0"><br>
+
+  <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>
