@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 .login-page {
   width: 360px;
@@ -6,46 +6,44 @@
   margin: auto;
 }
 .form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
+  background-color: #150d0d61;
+  width: 100%;
+  padding: 75px;
+  border: 1px solid #fff;
+  border-radius: 87px
 }
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 100%;
+  width: 102%;
   border: 0;
   margin: 0 0 15px;
-  padding: 15px;
+  padding: 20px;
   box-sizing: border-box;
   font-size: 14px;
+  border-radius: 12px;
 }
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  background: #blue;
-  width: 100%;
+  background: #b1b6fa53;
+  width: 105%;
   padding: 15px;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 40px;
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: #ffffff;
   font-size: 12px;
 }
 .form .message a {
-  color: #4CAF50;
-  text-decoration: none;
+  color: #c9de6c;
+  text-decoration: solid;
 }
-.form .register-form {
-  display: block;
-}
+
 .container {
   position: relative;
   z-index: 1;
@@ -75,6 +73,7 @@
   color: #EF3B3A;
 }
 body {
-  background: #76b852; /* fallback for old browsers */
+  background-image:url("/static/login.jpg");
   font-family: "Roboto", sans-serif;
+  background-size: cover;
 }

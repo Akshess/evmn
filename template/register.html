@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" type= "text/css" href= "/static/styles/login.css">
+    <link rel= "stylesheet" type= "text/css" href= "/static/styles/register.css">
     <title>Sign Up </title>
 </head>
 <body>
     <div class="login-page">
         <div class="form">
-          <form action = "/signup" method = "POST" class="register-form"  >
-            <input type="text" placeholder="username" name = 'username'/>
-            <input type="password" placeholder="password" name = 'password'/>
-            <input type="tel" placeholder="phonenumber" name = 'phonenumber' />
-            <input type="text" placeholder="address" name = 'address' />
-            <button>create</button>
-            <p class="message">Already registered? <a href="login">Sign In</a></p>
-          </form>
+            <form action = "/signup" method = "POST" class="register-form"  >
+              {% with messages=get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+              {% for category, message in messages %}
+              <script>
+                  alert("{{ get_flashed_messages()[0] }}");
+              </script>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+              <input type="text" placeholder="username" name = 'username'/>
+              <input type="password" placeholder="password" name = 'password'/>
+              <input type="tel" placeholder="phonenumber" name = 'phonenumber' />
+              <input type="text" placeholder="address" name = 'address' />
+              <button>Create</button>
+              <p class="message">Already registered? <a href="/login">Sign In</a></p>
+            </form>
         </div>
       </div>
 </body>

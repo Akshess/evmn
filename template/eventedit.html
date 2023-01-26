@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management System</title>
+    <link rel= "stylesheet" type= "text/css" href= "/static/styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href = '/create_event'>Event</a></li>
+        <li><a href = '/planview'>Planner</a></li>
+        <li><a href = '/venue'>Venue</a></li>
+        <li><a href = '/plansview'>No of events</a></li>
+        <li><a href = '/logout'>Logout</a></li>
+    </ul>
+</nav>
+<h1 style = "text-align: center; color:#ffffffa3;font-weight:Bold;font-size:50px">Event Edit Table</h1>
+<form action="/eventedit/{{post.event_id}}" method="POST">
+  {% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+    <label for="event-id">Event ID:</label>
+  <input type="number" id="event_id" name="event_id" disabled="disabled" value="{{post.event_id}}"><br>
+
+  <label for="event-name">Event Name:</label>
+  <input type="text" id="event_name" name="event_name" value="{{post.event_name}}"><br>
+
+  <label for="event_type">Event Type:</label>
+  <select id="event_type" name="event_type">
+    <option value="wedding">Wedding</option>
+    <option value="conference">Conference</option>
+    <option value="concert">Concert</option>
+    <option value="party">Party</option>
+  </select><br>
+
+  <label for="event_date">Event Date:</label>
+  <input type="date" id="event_date" name="event_date" value="{{post.event_date}}"><br>
+
+  <label for="event_time">Event Time:</label>
+  <input type="time" id="event_time" name="event_time" value="{{post.event_time}}"><br>
+
+  <label for="venue">Venue :</label>
+  <select id="venue_id" name="venue_id">
+    {% for venue in venues %}
+      <option value="{{ venue.venue_id }}">{{ venue.venue_name }}</option>
+    {% endfor %}
+  </select>
+  <label for="planner">Planner :</label>
+  <select id="planner_id" name="planner_id">
+    {% for planner in planners %}
+      <option value="{{ planner.planner_id }}">{{planner.planner_name }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="planner">Username:</label>
+  <input type="text" disable="disabled" id="username" name="username" value="{{post.username}}"><br>
+
+  <label for="total_cost">Total Cost:</label>
+  <input type="number" disabled="disabled" id="total_cost" name="total_cost" value="{{post.total_cost}}" readonly><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

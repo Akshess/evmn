@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management System</title>
+    <link rel= "stylesheet" type= "text/css" href= "/static/styles/others.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href = '/create_event'>Event</a></li>
+        <li><a href = '/planner'>Planner</a></li>
+        <li><a href = '/venue'>Venue</a></li>
+        <li><a href = '/plansview'>No of events</a></li>
+        <li><a href = '/logout'>Logout</a></li>
+    </ul>
+</nav>
+<h1 style="text-align: center; color:#ffffffa3;font-weight:Bold;font-size:50px"> Venue Details </h1>
+<form action ="/venueview" method="POST">
+    {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <script>
+        alert("{{ get_flashed_messages()[0] }}");
+    </script>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Venue Id</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Capacity</th>
+                    <th>Cost</th>
+                    <th>Available Date</th>
+                    <th>Booked Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody> 
+                {% for post in qry %}
+                <tr>
+                    <td>{{post.venue_id}}</td>
+                    <td>{{post.venue_name}}</td>
+                    <td>{{post.venue_phn}}</td>
+                    <td>{{post.venue_address}}</td>
+                    <td>{{post.capacity}}</td>
+                    <td>{{post.cost}}</td>
+                    <td>{{post.avail_date}}</td>
+                    <td>{{post.booked_date}}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/venuedit/{{post.venue_id}}">Update</a>
+                        <a class="btn btn-danger btn-sm" href="/venuedel/{{post.venue_id}}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>        
+    </table>
+    </form>
+</body>
+</html>

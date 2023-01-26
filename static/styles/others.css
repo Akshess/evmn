@@ -41,60 +41,29 @@ nav ul li a:hover {
 
 
 form {
-  background-color: #150d0d9e;
-  width: 40%;
-  margin: auto;
-  padding: 20px 30px;
-  border: 1px solid #fff;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30 px 30px;
+  border-radius: 10px;
+}
+
+.insertform {
+  display: flex; flex-direction: row;
+  padding : 20px 0px;
+  color : rgba(255, 255, 255, 0.881);
+  justify-content: space-between;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 label {
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
-  color: #fff;
 }
-
-input[type="text"],
-input[type="date"],
-input[type="time"],
-input[type="number"],
-select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #4545a0;
-}
-
-.viewbutton {
-  background-color: #ff0008;
-  color: rgb(255, 255, 255);
-  padding: 12px 20px;
-  text-decoration: solid;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.viewbutton:hover {
-  background-color: #c55e69;
-}
-
-
